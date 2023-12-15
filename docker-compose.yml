@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  db:
+    image: postgres
+    container_name: tasks_db
+    environment:
+      POSTGRES_USER: egor
+      POSTGRES_PASSWORD: fusion
+      POSTGRES_DB: tasks_db
+    ports:
+      - 5432:5432
