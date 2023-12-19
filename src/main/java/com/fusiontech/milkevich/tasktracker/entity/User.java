@@ -1,6 +1,7 @@
 package com.fusiontech.milkevich.tasktracker.entity;
 
 import com.fusiontech.milkevich.tasktracker.constant.UserRole;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -15,6 +16,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * User entity.
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -29,4 +33,6 @@ public class User extends AbstractEntity {
   private UserRole role;
   @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
   private List<Task> tasks;
+  @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+  private List<Comment> comment;
 }

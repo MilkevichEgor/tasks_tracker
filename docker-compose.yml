@@ -8,4 +8,27 @@ services:
       POSTGRES_PASSWORD: fusion
       POSTGRES_DB: tasks_db
     ports:
-      - 5432:5432
+      - "5432:5432"
+    networks:
+      - default
+
+  hazelcast:
+    image: hazelcast/hazelcast:latest
+    ports:
+      - "5701:5701"
+    networks:
+      - default
+
+  management-center:
+    image: hazelcast/management-center:latest
+    environment:
+      - MC_DEFAULT_CLUSTER=dev
+      - MC_DEFAULT_CLUSTER_MEMBERS=hazelcast
+    ports:
+      - "8081:8081"
+    networks:
+      - default
+
+networks:
+  default:
+    name: tasks

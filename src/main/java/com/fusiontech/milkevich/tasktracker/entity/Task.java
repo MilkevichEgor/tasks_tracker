@@ -11,11 +11,16 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Task entity.
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -32,4 +37,6 @@ public class Task extends AbstractEntity {
   @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.DETACH)
   @JoinColumn(name = "user_id")
   private User user;
+  @OneToMany(mappedBy = "task", fetch = FetchType.EAGER)
+  private List<Comment> comment;
 }

@@ -7,8 +7,12 @@ import com.fusiontech.milkevich.tasktracker.services.UserService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * User rest controller.
+ */
 @RestController
 @RequestMapping("/users")
-public class UserRestController extends AbstractRestController<UserService, UserRepository, User, UserDto> {
+public class UserRestController
+    extends AbstractRestController<UserService, UserRepository, User, UserDto> {
 
 }
