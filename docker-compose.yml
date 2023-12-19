@@ -1,5 +1,20 @@
 version: '3.8'
 services:
+  app:
+    image: task-tracker-app:0.0.1
+    container_name: task-tracker-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+      - hazelcast
+      - management-center
+    networks:
+      - default
+
   db:
     image: postgres
     container_name: tasks_db

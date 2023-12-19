@@ -29,7 +29,7 @@ import org.springframework.test.context.TestPropertySource;
 @TestPropertySource(locations = "classpath:application-test.properties")
 @EnableConfigurationProperties
 @ActiveProfiles("test")
-public class UserServicesTest {
+class UserServicesTest {
 
   @Autowired
   private UserRepository userRepository;

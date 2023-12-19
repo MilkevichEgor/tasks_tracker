@@ -12,6 +12,7 @@ import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,13 +20,15 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.TestPropertySource;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+@ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = {TaskRepository.class, TaskService.class})
 @ComponentScan(basePackages = {"com.fusiontech.milkevich.tasktracker"})
 @TestPropertySource(locations = "classpath:application-test.properties")
 @EnableConfigurationProperties
 @ActiveProfiles("test")
-public class TaskServiceTest {
+class TaskServiceTest {
 
   @Autowired
   private TaskService taskService;
@@ -97,7 +100,7 @@ public class TaskServiceTest {
     taskRepository.deleteById(id);
     Assertions.assertEquals(1, taskRepository.findAll().size());
   }
-  
+
   @Test
   @DirtiesContext
   void changeStatusTest() {

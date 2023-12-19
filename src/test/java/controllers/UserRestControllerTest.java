@@ -21,7 +21,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.MediaType;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -79,7 +78,7 @@ class UserRestControllerTest {
   }
 
   @Test
-  @DirtiesContext
+//  @DirtiesContext
   void getByIdTest() throws Exception {
     mockMvc.perform(get("/users/1")
             .contentType(MediaType.APPLICATION_JSON))
@@ -89,7 +88,7 @@ class UserRestControllerTest {
   }
 
   @Test
-  @DirtiesContext
+//  @DirtiesContext
   void getAllTest() throws Exception {
 
     mockMvc.perform(get("/users"))
@@ -99,7 +98,7 @@ class UserRestControllerTest {
   }
 
   @Test
-  @DirtiesContext
+//  @DirtiesContext
   void saveUserTest() throws Exception {
     mockMvc.perform(post("/users")
             .contentType(MediaType.APPLICATION_JSON)
@@ -110,7 +109,7 @@ class UserRestControllerTest {
   }
 
   @Test
-  @DirtiesContext
+//  @DirtiesContext
   void deleteUserTest() throws Exception {
     mockMvc.perform(delete("/users/1")
             .contentType(MediaType.APPLICATION_JSON))

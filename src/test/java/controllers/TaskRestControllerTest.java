@@ -21,7 +21,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.MediaType;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -79,7 +78,7 @@ class TaskRestControllerTest {
   }
 
   @Test
-  @DirtiesContext
+//  @DirtiesContext
   void getByIdTest() throws Exception {
 
     mockMvc.perform(get("/tasks/1"))
@@ -90,7 +89,7 @@ class TaskRestControllerTest {
   }
 
   @Test
-  @DirtiesContext
+//  @DirtiesContext
   void getAllTest() throws Exception {
 
     mockMvc.perform(get("/tasks"))
@@ -100,7 +99,7 @@ class TaskRestControllerTest {
   }
 
   @Test
-  @DirtiesContext
+//  @DirtiesContext
   void saveTaskTest() throws Exception {
 
     mockMvc.perform(post("/tasks")
@@ -112,7 +111,7 @@ class TaskRestControllerTest {
   }
 
   @Test
-  @DirtiesContext
+//  @DirtiesContext
   void deleteTaskTest() throws Exception {
 
     mockMvc.perform(delete("/tasks/1")
