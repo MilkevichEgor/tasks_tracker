@@ -3,7 +3,7 @@ package com.fusiontech.milkevich.tasktracker.services;
 import com.fusiontech.milkevich.tasktracker.dto.AbstractDto;
 import com.fusiontech.milkevich.tasktracker.entity.AbstractEntity;
 import com.hazelcast.config.Config;
-import com.hazelcast.instance.impl.HazelcastInstanceFactory;
+import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.map.IMap;
 import jakarta.annotation.PostConstruct;
 import java.util.List;
@@ -25,19 +25,22 @@ public abstract class AbstractService<E extends AbstractEntity,
   protected R repository;
 
   @Autowired
-  private Config hazelcastConfig;
+  protected Config hazelcastConfig;
+
+  @Autowired
+  private HazelcastInstance hazelcastInstance;
 
   /**
    * Hazelcast cache.
    */
-  IMap<Long, D> cache =
-      HazelcastInstanceFactory.newHazelcastInstance(hazelcastConfig).getMap(getMapName());
+  protected IMap<Long, D> cache;
 
   /**
    * Initializes the cache by populating it with entities from the repository.
    */
   @PostConstruct
   public void init() {
+    cache = hazelcastInstance.getMap(getMapName());
     repository.findAll().forEach(entity -> cache.put(entity.getId(), toDto(entity)));
   }
 
@@ -47,6 +50,8 @@ public abstract class AbstractService<E extends AbstractEntity,
    * @return - map name
    */
   protected abstract String getMapName();
+
+  protected abstract List<String> relatedMapNames();
 
   /**
    * method Get by id.
@@ -58,7 +63,9 @@ public abstract class AbstractService<E extends AbstractEntity,
     if (cache.containsKey(id)) {
       return cache.get(id);
     }
-    return toDto(repository.findById(id).get());
+    var dto = toDto(repository.findById(id).get());
+    cache.put(id, dto);
+    return dto;
   }
 
   /**
@@ -70,6 +77,7 @@ public abstract class AbstractService<E extends AbstractEntity,
     if (!cache.isEmpty()) {
       return cache.values().stream().toList();
     }
+
     repository.findAll().forEach(entity -> cache.put(entity.getId(), toDto(entity)));
     return repository.findAll().stream().map(this::toDto).toList();
   }
@@ -84,6 +92,7 @@ public abstract class AbstractService<E extends AbstractEntity,
   public D save(D dto) {
     dto = toDto(repository.save(toEntity(dto)));
     cache.put(dto.getId(), dto);
+    relatedMapNames().forEach(mapName -> hazelcastInstance.getMap(mapName).clear());
     return dto;
   }
 
@@ -96,6 +105,7 @@ public abstract class AbstractService<E extends AbstractEntity,
   public void delete(Long id) {
     repository.deleteById(id);
     cache.delete(id);
+    relatedMapNames().forEach(mapName -> hazelcastInstance.getMap(mapName).clear());
   }
 
   /**

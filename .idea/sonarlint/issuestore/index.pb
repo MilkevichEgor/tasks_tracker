@@ -64,3 +64,23 @@ Ysrc/main/java/com/fusiontech/milkevich/tasktracker/controllers/CommentRestContr
 :
 
 Dockerfile,6/6/6651ddff6eb82c840ced7c1dddee15c6e1913dd4
+}
+Msrc/main/java/com/fusiontech/milkevich/tasktracker/config/SecurityConfig.java,4/5/452e7fd7af67380ad5ce6b0784c38b5fe91b8ada
+‚
+Rsrc/main/java/com/fusiontech/milkevich/tasktracker/security/AuthEntryPointJwt.java,a/8/a86cf97a677f9d8c9b635bb40cfc90b8c8701d9c
+€
+Psrc/main/java/com/fusiontech/milkevich/tasktracker/security/AuthTokenFilter.java,9/a/9a191bcf9248a0b377957cfaf4a4f140d0040354
+y
+Isrc/main/java/com/fusiontech/milkevich/tasktracker/security/JwtUtils.java,2/e/2ed6f8846ec9a6ed4a27aacc8f41d283c2b98e0f
+Œ
+\src/main/java/com/fusiontech/milkevich/tasktracker/services/impl/UserDetailsServiceImpl.java,b/6/b63f9b3dec897eb9101fb24e171375238ed1c5e6
+†
+Vsrc/main/java/com/fusiontech/milkevich/tasktracker/controllers/AuthRestController.java,5/2/527882aa11eabdb243c0387699d6ce265b0fce32
+
+Osrc/main/java/com/fusiontech/milkevich/tasktracker/dto/request/AuthRequest.java,3/2/327675c041f88f75e3b188cf061924d5bc6f728c
+„
+Tsrc/main/java/com/fusiontech/milkevich/tasktracker/dto/response/MessageResponse.java,d/1/d172f8ee69e3d82b8040d4a93454a53ce5f0fa2b
+€
+Psrc/main/java/com/fusiontech/milkevich/tasktracker/dto/response/JwtResponse.java,4/f/4f66e4125ca8868fe2a094b024201b2f454b8901
+…
+Usrc/main/java/com/fusiontech/milkevich/tasktracker/repository/AbstractRepository.java,a/2/a296b026cf66830eecbfbff79c216da4fccc6a0a

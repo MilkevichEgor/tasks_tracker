@@ -1,0 +1,11 @@
+
+^
+java:S17104"<Remove the 'ApiResponses' wrapper from this annotation group(Å¬†—üÿÿÿÿ8ë¦€ŠÊ1
+W
+java:S1710R":Remove the 'Parameters' wrapper from this annotation group(àáñ¨8¥¸ŠÊ1
+^
+java:S1710V"<Remove the 'ApiResponses' wrapper from this annotation group(Å¬†—üÿÿÿÿ8¥¸ŠÊ1
+_
+java:S6813%"BRemove this field injection and use constructor injection instead.(êæÄŞ8î¦€ŠÊ1
+_
+java:S6813("BRemove this field injection and use constructor injection instead.(êæÄŞ8î¦€ŠÊ1

@@ -1,11 +1,11 @@
 
 ^
-java:S1710+"<Remove the 'ApiResponses' wrapper from this annotation group(Å¬†—üÿÿÿÿ8Ş‡ˆÈ1
+java:S1710*"<Remove the 'ApiResponses' wrapper from this annotation group(Å¬†—üÿÿÿÿ8Ş‡ˆÈ1
 ^
-java:S1710@"<Remove the 'ApiResponses' wrapper from this annotation group(Å¬†—üÿÿÿÿ8õñˆÈ1
+java:S1710?"<Remove the 'ApiResponses' wrapper from this annotation group(Å¬†—üÿÿÿÿ8õñˆÈ1
 ^
-java:S1710V"<Remove the 'ApiResponses' wrapper from this annotation group(Å¬†—üÿÿÿÿ8Í©”ˆÈ1
+java:S1710U"<Remove the 'ApiResponses' wrapper from this annotation group(Å¬†—üÿÿÿÿ8Í©”ˆÈ1
 ^
-java:S1710l"<Remove the 'ApiResponses' wrapper from this annotation group(Å¬†—üÿÿÿÿ8­ø–ˆÈ1
+java:S1710k"<Remove the 'ApiResponses' wrapper from this annotation group(Å¬†—üÿÿÿÿ8­ø–ˆÈ1
 _
-java:S6813!"BRemove this field injection and use constructor injection instead.(êæÄŞ8 Ş‡ˆÈ1
+java:S6813 "BRemove this field injection and use constructor injection instead.(êæÄŞ8 Ş‡ˆÈ1

@@ -5,6 +5,7 @@ import com.fusiontech.milkevich.tasktracker.entity.Comment;
 import com.fusiontech.milkevich.tasktracker.repository.CommentRepository;
 import com.fusiontech.milkevich.tasktracker.repository.TaskRepository;
 import com.fusiontech.milkevich.tasktracker.repository.UserRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +24,11 @@ public class CommentService extends AbstractService<Comment, CommentDto, Comment
   @Override
   protected String getMapName() {
     return "CommentMap";
+  }
+
+  @Override
+  protected List<String> relatedMapNames() {
+    return List.of("UserMap", "TaskMap");
   }
 
   /**

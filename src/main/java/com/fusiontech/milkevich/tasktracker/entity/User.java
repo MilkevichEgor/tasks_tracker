@@ -1,5 +1,6 @@
 package com.fusiontech.milkevich.tasktracker.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fusiontech.milkevich.tasktracker.constant.UserRole;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -29,10 +30,13 @@ public class User extends AbstractEntity {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
   private String name;
+  @JsonIgnore
+  private String password;
   @Enumerated(value = EnumType.STRING)
   private UserRole role;
   @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
   private List<Task> tasks;
   @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
   private List<Comment> comment;
+
 }

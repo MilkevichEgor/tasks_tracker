@@ -1,7 +1,9 @@
 
 r
-java:S3655="PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ýÿü–üÿÿÿÿ8ºœÞŒÈ1
+java:S3655B"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(€ˆ®¤üÿÿÿÿ8Ã€½ŒÊ1
 _
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8»œÞŒÈ1
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8Åê­‹Ê1
 _
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8»œÞŒÈ1
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8Åê­‹Ê1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8Æê­‹Ê1

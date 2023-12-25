@@ -1,0 +1,11 @@
+
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8æªÿ†Ê1
+_
+java:S6813 "BRemove this field injection and use constructor injection instead.(êæÄÞ8æªÿ†Ê1
+_
+java:S6813#"BRemove this field injection and use constructor injection instead.(êæÄÞ8æªÿ†Ê1
+o
+java:S3305!"RInject this field value directly into "filterChain", the only method that uses it.(†€Ú³8çªÿ†Ê1
+€
+java:S3305"cInject this field value directly into "authenticationJwtTokenFilter", the only method that uses it.(çãˆâ8çªÿ†Ê1

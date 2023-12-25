@@ -11,7 +11,14 @@ import org.springframework.cache.annotation.EnableCaching;
 @EnableCaching
 public class TaskTrackerApplication {
 
+  /**
+   * Main method.
+   *
+   * @param args - args
+   */
   public static void main(String[] args) {
-    SpringApplication.run(TaskTrackerApplication.class, args);
+    SpringApplication application = new SpringApplication(TaskTrackerApplication.class);
+//    application.setAdditionalProfiles("docker");
+    application.run(args);
   }
 }

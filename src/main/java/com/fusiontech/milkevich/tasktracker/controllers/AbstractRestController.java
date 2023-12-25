@@ -7,7 +7,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import java.util.List;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.http.ResponseEntity;
@@ -25,8 +25,7 @@ import org.springframework.web.bind.annotation.RequestBody;
  * @param <E> - Entity
  * @param <D> - Dto
  */
-
-@Slf4j
+@Log4j2
 public abstract class AbstractRestController<S extends AbstractService<E, D, R>,
     R extends JpaRepository<E, Long>, E extends AbstractEntity, D extends AbstractDto> {
 

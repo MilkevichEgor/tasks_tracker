@@ -55,6 +55,7 @@ public class TaskService extends AbstractService<Task, TaskDto, TaskRepository> 
       User user = userRepository.findById(dto.getUserId()).get();
       task.setUser(user);
     }
+
     return task;
   }
 
@@ -66,6 +67,11 @@ public class TaskService extends AbstractService<Task, TaskDto, TaskRepository> 
   @Override
   protected String getMapName() {
     return "TaskMap";
+  }
+
+  @Override
+  protected List<String> relatedMapNames() {
+    return List.of("UserMap", "CommentMap");
   }
 
   /**
